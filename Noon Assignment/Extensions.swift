@@ -21,4 +21,22 @@ extension UIViewController {
         alert.modalPresentationStyle = .overFullScreen;
         self.present(alert, animated: true, completion: nil);
     }
+
+    static let dateFormatterGet = DateFormatter();
+
+    func getDateFormatter(formate: String = "MMM dd,yyyy") -> DateFormatter {
+        return UIViewController.dateFormatterGet;
+    }
+
+    func getFormattedDate(date: Date, format: String = "MMM dd,yyyy") -> String {
+        UIViewController.dateFormatterGet.dateFormat = format;
+        return UIViewController.dateFormatterGet.string(from: date);
+    }
+
+    static func getFormattedDate(date: Date, format: String = "MMM dd,yyyy") -> String {
+        UIViewController.dateFormatterGet.dateFormat = format;
+        return UIViewController.dateFormatterGet.string(from: date);
+    }
+
 }
+

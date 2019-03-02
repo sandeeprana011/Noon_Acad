@@ -9,6 +9,14 @@
 import UIKit
 import CoreData
 
+enum ActionType: String {
+    case EDIT, ADD, DELETE
+}
+
+protocol DelegateEmployeeUpdated {
+    func onUpdateResults(vc: AddEmployeeViewController, employee: Employee, actionType: ActionType);
+}
+
 class AddEmployeeViewController: UIViewController {
 
     @IBOutlet weak var tName: UITextField!;
@@ -20,13 +28,15 @@ class AddEmployeeViewController: UIViewController {
 
     @IBOutlet weak var datePicker: UIDatePicker!;
 
-    let dateFormatterGet = DateFormatter();
 
+    var delegateResultUpdated: DelegateEmployeeUpdated?;
+
+    var employee: Employee?;
 
     @IBAction func onDatePickerValueChanged(_ sender: UIDatePicker) {
         print(sender.date);
 
-        let dateString: String = dateFormatterGet.string(from: sender.date);
+        let dateString: String = self.getFormattedDate(date: sender.date);
         self.bAnniversary.setTitle(dateString, for: .normal);
     }
 
@@ -49,8 +59,16 @@ class AddEmployeeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad();
-        dateFormatterGet.dateFormat = "MMM dd,yyyy";
         self.changeDatePickerVisibility(isHidden: true);
+        if let emp = self.employee {
+            self.tName.text = emp.name;
+            self.tEmail.text = emp.email ?? "";
+            self.bCity.setTitle(emp.city ?? AddEmployeeViewController.labelSelectCity, for: .normal);
+            if let annive = emp.anniversary {
+                self.bAnniversary.setTitle(self.getDateFormatter().string(from: annive), for: .normal);
+            }
+            self.switchMarried.isOn = emp.married;
+        }
     }
 
     func changeDatePickerVisibility(isHidden: Bool) {
@@ -96,27 +114,76 @@ class AddEmployeeViewController: UIViewController {
         if error == true {
             let message = "\(errorMessages.joined(separator: ",")) must be provided!";
             self.showAlert(title: "Error", message: message);
-			return;
+            return;
         }
 
-        let entity = NSEntityDescription.entity(forEntityName: "Employee", in: AppDelegate.getContext())
-        let newEmployee = NSManagedObject(entity: entity!, insertInto: AppDelegate.getContext());
-        newEmployee.setValue(name, forKey: "name");
-        newEmployee.setValue(email, forKey: "email");
-        newEmployee.setValue(isMarried, forKey: "married");
-        newEmployee.setValue(city, forKey: "city");
-        let dateAnniversary = self.dateFormatterGet.date(from: self.bAnniversary.title(for: .normal) ?? "");
-        newEmployee.setValue(dateAnniversary, forKey: "anniversary")
 
-        do {
-            try AppDelegate.getContext().save()
-            self.navigationController?.popViewController(animated: true);
-        } catch {
-            print("Failed saving")
-            self.showAlert(title: "Error", message: "Failed saving!");
+        if self.employee != nil {
+            self.employee?.setValue(name, forKey: "name");
+            self.employee?.setValue(email, forKey: "email");
+            self.employee?.setValue(isMarried, forKey: "married");
+            self.employee?.setValue(city, forKey: "city");
+            let dateAnniversary = self.getDateFormatter().date(from: self.bAnniversary.title(for: .normal) ?? "");
+            self.employee?.setValue(dateAnniversary, forKey: "anniversary")
 
+            self.employee?.setValue(employee?.id, forKey: "id");
+            do {
+				try self.saveEmployeeDetail(employee: self.employee!)
+            } catch {
+                print("Error saving employeedetails");
+            }
+        } else {
+            let entity = NSEntityDescription.entity(forEntityName: "Employee", in: AppDelegate.getContext())
+            let newEmployee = NSManagedObject(entity: entity!, insertInto: AppDelegate.getContext()) as! Employee;
+            newEmployee.setValue(name, forKey: "name");
+            newEmployee.setValue(email, forKey: "email");
+            newEmployee.setValue(isMarried, forKey: "married");
+            newEmployee.setValue(city, forKey: "city");
+            let dateAnniversary = self.getDateFormatter().date(from: self.bAnniversary.title(for: .normal) ?? "");
+            newEmployee.setValue(dateAnniversary, forKey: "anniversary")
+
+            newEmployee.setValue(Int64(Date().timeIntervalSince1970), forKey: "id");
+            do {
+                try AppDelegate.getContext().save()
+                self.delegateResultUpdated?.onUpdateResults(vc: self, employee: newEmployee, actionType: .ADD);
+            } catch {
+                print("Failed saving")
+                self.showAlert(title: "Error", message: "Failed saving!");
+
+            }
         }
 
+    }
+
+    func saveEmployeeDetail(employee: Employee) throws {
+        let context = AppDelegate.getContext();
+
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Employee")
+        fetchRequest.predicate = NSPredicate(format: "id = \(employee.id)", "");
+
+        if let fetchResults = try context.fetch(fetchRequest) as? [NSManagedObject] {
+            if fetchResults.count != 0 {
+
+                if var object = fetchResults.first {
+                    object.setValue(employee.name, forKey: "name");
+                    object.setValue(employee.email, forKey: "email");
+                    object.setValue(employee.married, forKey: "married");
+                    object.setValue(employee.city, forKey: "city");
+                    let dateAnniversary = self.getDateFormatter().date(from: self.bAnniversary.title(for: .normal) ?? "");
+                    object.setValue(employee.anniversary, forKey: "anniversary")
+                    object.setValue(employee.id, forKey: "id");
+
+                }
+
+                do {
+                    try context.save()
+                    self.delegateResultUpdated?.onUpdateResults(vc: self, employee: employee, actionType: .EDIT);
+                } catch {
+                    print("Failed to update");
+                    self.showAlert(title: "Error", message: "Failed to save!");
+                }
+            }
+        }
     }
 
 
@@ -129,3 +196,6 @@ extension AddEmployeeViewController: DelegateCitySelected {
         // dismiss if presented
     }
 }
+
+
+
