@@ -39,7 +39,10 @@ class EmployeesListViewController: UIViewController {
 
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Employee")
 //        let fetchRequest = Fetch
-        //request.predicate = NSPredicate(format: "age = %@", "12")
+        let sortDescriptor = NSSortDescriptor(key: "name", ascending: true);
+        let sortDescriptors = [sortDescriptor]
+        fetchRequest.sortDescriptors = sortDescriptors
+
         fetchRequest.returnsObjectsAsFaults = false
         do {
             let result = try AppDelegate.getContext().fetch(fetchRequest)
