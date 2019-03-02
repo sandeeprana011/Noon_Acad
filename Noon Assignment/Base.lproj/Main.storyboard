@@ -17,9 +17,15 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" translucent="NO" id="eso-be-0rS">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
-                        <segue destination="Tzn-cO-XoS" kind="relationship" relationship="rootViewController" id="8jI-OF-mP8"/>
+                        <segue destination="Tzn-cO-XoS" kind="relationship" relationship="rootViewController" id="YIS-jP-ob8"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K2Y-y5-uVC" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -155,7 +161,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Ud2-cm-9UV"/>
                     </view>
-                    <navigationItem key="navigationItem" id="bl7-sZ-fYV">
+                    <navigationItem key="navigationItem" title="Employee List" id="bl7-sZ-fYV">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="CE3-yX-9pP">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
@@ -171,16 +177,16 @@
             </objects>
             <point key="canvasLocation" x="264.80000000000001" y="98.50074962518741"/>
         </scene>
-        <!--Add Employee View Controller-->
+        <!--Employee Form-->
         <scene sceneID="G5X-7B-zy1">
             <objects>
-                <viewController storyboardIdentifier="AddEmployeeViewController" id="v19-yq-cEX" customClass="AddEmployeeViewController" customModule="Noon_Assignment" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddEmployeeViewController" title="Employee Form" id="v19-yq-cEX" customClass="AddEmployeeViewController" customModule="Noon_Assignment" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NwQ-9v-7ec">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="hZx-0H-lqC">
-                                <rect key="frame" x="16" y="36" width="343" height="316.5"/>
+                                <rect key="frame" x="16" y="36" width="343" height="345"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="9qn-lh-KRh">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="58.5"/>
@@ -195,7 +201,7 @@
                                                 <rect key="frame" x="0.0" y="28.5" width="343" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" textContentType="name"/>
                                             </textField>
                                         </subviews>
                                     </stackView>
@@ -212,7 +218,7 @@
                                                 <rect key="frame" x="0.0" y="28.5" width="343" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="email"/>
                                             </textField>
                                         </subviews>
                                     </stackView>
@@ -244,19 +250,33 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mHQ-j0-PiL">
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="mHQ-j0-PiL">
                                                 <rect key="frame" x="181.5" y="0.0" width="163.5" height="31"/>
+                                                <connections>
+                                                    <action selector="onValueChangeForSwitchMarried:" destination="v19-yq-cEX" eventType="valueChanged" id="HlO-Sd-PPb"/>
+                                                </connections>
                                             </switch>
                                         </subviews>
                                     </stackView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VPK-vy-J6H">
-                                        <rect key="frame" x="0.0" y="286.5" width="343" height="30"/>
-                                        <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        <state key="normal" title="Anniversary Date"/>
-                                        <connections>
-                                            <action selector="onClickPickAnniversaryDate:" destination="v19-yq-cEX" eventType="touchUpInside" id="qps-Lj-Hgl"/>
-                                        </connections>
-                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="aD5-yg-Qes">
+                                        <rect key="frame" x="0.0" y="286.5" width="343" height="58.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wEb-vS-LUu">
+                                                <rect key="frame" x="0.0" y="0.0" width="343" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VPK-vy-J6H">
+                                                <rect key="frame" x="0.0" y="28.5" width="343" height="30"/>
+                                                <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                <state key="normal" title="Anniversary Date"/>
+                                                <connections>
+                                                    <action selector="onClickPickAnniversaryDate:" destination="v19-yq-cEX" eventType="touchUpInside" id="qps-Lj-Hgl"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                             </stackView>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="uAV-MM-ceJ">
@@ -306,7 +326,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Eot-o1-LZi"/>
                     </view>
-                    <navigationItem key="navigationItem" id="NTg-q0-LxZ">
+                    <navigationItem key="navigationItem" title="Employee Form" id="NTg-q0-LxZ">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="hPj-Ly-dDC">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="onClickCancel:" destination="v19-yq-cEX" id="BLz-rt-dcZ"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="Neu-aW-H7Q">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
@@ -318,6 +344,7 @@
                         <outlet property="bAnniversary" destination="VPK-vy-J6H" id="7bN-Nr-i1b"/>
                         <outlet property="bCity" destination="0MM-Lc-Yis" id="Y84-CF-VIh"/>
                         <outlet property="datePicker" destination="uAV-MM-ceJ" id="mhx-aJ-rb5"/>
+                        <outlet property="stackAnniversary" destination="aD5-yg-Qes" id="id5-rH-xjf"/>
                         <outlet property="switchMarried" destination="mHQ-j0-PiL" id="7gu-HU-I1v"/>
                         <outlet property="tEmail" destination="JKT-Sv-oZf" id="nBD-ve-ycz"/>
                         <outlet property="tName" destination="arr-9s-3yv" id="LUy-FF-gCq"/>

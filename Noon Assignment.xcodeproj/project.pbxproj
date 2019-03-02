@@ -16,6 +16,7 @@
 		059A820B222A78B80025FDCF /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059A820A222A78B80025FDCF /* Extensions.swift */; };
 		059A820D222A793C0025FDCF /* AddEmployeeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059A820C222A793C0025FDCF /* AddEmployeeViewController.swift */; };
 		059A8211222A868C0025FDCF /* SelectCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059A8210222A868C0025FDCF /* SelectCityViewController.swift */; };
+		4D7BC4779608288A56C1A04E /* DelegateEmployeeUpdated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7BCC9DC9DB857FA2E3585D /* DelegateEmployeeUpdated.swift */; };
 		4D7BCE9691F88064EFDB1B32 /* CellEmployeeList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7BC64E2A87957208318B17 /* CellEmployeeList.swift */; };
 		4D7BCF38AD70C7F5E9831435 /* Employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7BC17A6C6AE1F1035E7733 /* Employee.swift */; };
 		4D7BCF8C7B948ED1A834FACB /* CellSelectCity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7BCFB107916EEEDF9BC1EF /* CellSelectCity.swift */; };
@@ -35,6 +36,7 @@
 		059A8210222A868C0025FDCF /* SelectCityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCityViewController.swift; sourceTree = "<group>"; };
 		4D7BC17A6C6AE1F1035E7733 /* Employee.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Employee.swift; sourceTree = "<group>"; };
 		4D7BC64E2A87957208318B17 /* CellEmployeeList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellEmployeeList.swift; sourceTree = "<group>"; };
+		4D7BCC9DC9DB857FA2E3585D /* DelegateEmployeeUpdated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DelegateEmployeeUpdated.swift; sourceTree = "<group>"; };
 		4D7BCFB107916EEEDF9BC1EF /* CellSelectCity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellSelectCity.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -81,6 +83,7 @@
 				4D7BCFB107916EEEDF9BC1EF /* CellSelectCity.swift */,
 				4D7BC17A6C6AE1F1035E7733 /* Employee.swift */,
 				4D7BC64E2A87957208318B17 /* CellEmployeeList.swift */,
+				4D7BCC9DC9DB857FA2E3585D /* DelegateEmployeeUpdated.swift */,
 			);
 			path = "Noon Assignment";
 			sourceTree = "<group>";
@@ -165,6 +168,7 @@
 				4D7BCF8C7B948ED1A834FACB /* CellSelectCity.swift in Sources */,
 				4D7BCF38AD70C7F5E9831435 /* Employee.swift in Sources */,
 				4D7BCE9691F88064EFDB1B32 /* CellEmployeeList.swift in Sources */,
+				4D7BC4779608288A56C1A04E /* DelegateEmployeeUpdated.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

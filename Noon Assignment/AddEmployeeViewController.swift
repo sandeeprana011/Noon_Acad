@@ -9,13 +9,6 @@
 import UIKit
 import CoreData
 
-enum ActionType: String {
-    case EDIT, ADD, DELETE
-}
-
-protocol DelegateEmployeeUpdated {
-    func onUpdateResults(vc: AddEmployeeViewController, employee: Employee, actionType: ActionType);
-}
 
 class AddEmployeeViewController: UIViewController {
 
@@ -25,6 +18,7 @@ class AddEmployeeViewController: UIViewController {
     @IBOutlet weak var bAnniversary: UIButton!;
     @IBOutlet weak var switchMarried: UISwitch!;
     @IBOutlet weak var viewDoneButton: UIView!;
+    @IBOutlet weak var stackAnniversary: UIStackView!;
 
     @IBOutlet weak var datePicker: UIDatePicker!;
 
@@ -38,6 +32,14 @@ class AddEmployeeViewController: UIViewController {
 
         let dateString: String = self.getFormattedDate(date: sender.date);
         self.bAnniversary.setTitle(dateString, for: .normal);
+    }
+
+    @IBAction func onClickCancel(_ sender: UIBarButtonItem) {
+        self.delegateResultUpdated?.onCancel(vc: self, actionType: .CANCEL);
+    }
+
+    @IBAction func onValueChangeForSwitchMarried(_ sender: UISwitch) {
+        self.stackAnniversary.isHidden = !sender.isOn;
     }
 
 
@@ -128,7 +130,7 @@ class AddEmployeeViewController: UIViewController {
 
             self.employee?.setValue(employee?.id, forKey: "id");
             do {
-				try self.saveEmployeeDetail(employee: self.employee!)
+                try self.saveEmployeeDetail(employee: self.employee!)
             } catch {
                 print("Error saving employeedetails");
             }

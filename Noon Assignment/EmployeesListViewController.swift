@@ -73,6 +73,10 @@ extension EmployeesListViewController: UITableViewDelegate, UITableViewDataSourc
 }
 
 extension EmployeesListViewController: DelegateEmployeeUpdated {
+	func onCancel(vc: AddEmployeeViewController, actionType: ActionType) {
+		self.navigationController?.popViewController(animated: true);
+	}
+	
     func onUpdateResults(vc: AddEmployeeViewController, employee: Employee, actionType: ActionType) {
         self.fetchEmployessListDateAndUPdateUI();
         self.navigationController?.popViewController(animated: true);
