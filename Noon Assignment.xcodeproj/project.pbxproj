@@ -8,22 +8,30 @@
 
 /* Begin PBXBuildFile section */
 		059A81F4222A75020025FDCF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059A81F3222A75020025FDCF /* AppDelegate.swift */; };
-		059A81F6222A75020025FDCF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059A81F5222A75020025FDCF /* ViewController.swift */; };
 		059A81F9222A75020025FDCF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 059A81F7222A75020025FDCF /* Main.storyboard */; };
 		059A81FC222A75020025FDCF /* Noon_Assignment.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 059A81FA222A75020025FDCF /* Noon_Assignment.xcdatamodeld */; };
 		059A81FE222A75040025FDCF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 059A81FD222A75040025FDCF /* Assets.xcassets */; };
 		059A8201222A75040025FDCF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 059A81FF222A75040025FDCF /* LaunchScreen.storyboard */; };
+		059A8209222A788F0025FDCF /* EmployeesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059A8208222A788F0025FDCF /* EmployeesListViewController.swift */; };
+		059A820B222A78B80025FDCF /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059A820A222A78B80025FDCF /* Extensions.swift */; };
+		059A820D222A793C0025FDCF /* AddEmployeeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059A820C222A793C0025FDCF /* AddEmployeeViewController.swift */; };
+		059A8211222A868C0025FDCF /* SelectCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059A8210222A868C0025FDCF /* SelectCityViewController.swift */; };
+		4D7BCF8C7B948ED1A834FACB /* CellSelectCity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7BCFB107916EEEDF9BC1EF /* CellSelectCity.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		059A81F0222A75020025FDCF /* Noon Assignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Noon Assignment.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		059A81F3222A75020025FDCF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		059A81F5222A75020025FDCF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		059A81F8222A75020025FDCF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		059A81FB222A75020025FDCF /* Noon_Assignment.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Noon_Assignment.xcdatamodel; sourceTree = "<group>"; };
 		059A81FD222A75040025FDCF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		059A8200222A75040025FDCF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		059A8202222A75040025FDCF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		059A8208222A788F0025FDCF /* EmployeesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeesListViewController.swift; sourceTree = "<group>"; };
+		059A820A222A78B80025FDCF /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		059A820C222A793C0025FDCF /* AddEmployeeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEmployeeViewController.swift; sourceTree = "<group>"; };
+		059A8210222A868C0025FDCF /* SelectCityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCityViewController.swift; sourceTree = "<group>"; };
+		4D7BCFB107916EEEDF9BC1EF /* CellSelectCity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellSelectCity.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,12 +65,16 @@
 			isa = PBXGroup;
 			children = (
 				059A81F3222A75020025FDCF /* AppDelegate.swift */,
-				059A81F5222A75020025FDCF /* ViewController.swift */,
+				059A820A222A78B80025FDCF /* Extensions.swift */,
+				059A8208222A788F0025FDCF /* EmployeesListViewController.swift */,
+				059A820C222A793C0025FDCF /* AddEmployeeViewController.swift */,
+				059A8210222A868C0025FDCF /* SelectCityViewController.swift */,
 				059A81F7222A75020025FDCF /* Main.storyboard */,
 				059A81FD222A75040025FDCF /* Assets.xcassets */,
 				059A81FF222A75040025FDCF /* LaunchScreen.storyboard */,
 				059A8202222A75040025FDCF /* Info.plist */,
 				059A81FA222A75020025FDCF /* Noon_Assignment.xcdatamodeld */,
+				4D7BCFB107916EEEDF9BC1EF /* CellSelectCity.swift */,
 			);
 			path = "Noon Assignment";
 			sourceTree = "<group>";
@@ -138,9 +150,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				059A8209222A788F0025FDCF /* EmployeesListViewController.swift in Sources */,
 				059A81FC222A75020025FDCF /* Noon_Assignment.xcdatamodeld in Sources */,
-				059A81F6222A75020025FDCF /* ViewController.swift in Sources */,
 				059A81F4222A75020025FDCF /* AppDelegate.swift in Sources */,
+				059A820B222A78B80025FDCF /* Extensions.swift in Sources */,
+				059A820D222A793C0025FDCF /* AddEmployeeViewController.swift in Sources */,
+				059A8211222A868C0025FDCF /* SelectCityViewController.swift in Sources */,
+				4D7BCF8C7B948ED1A834FACB /* CellSelectCity.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
