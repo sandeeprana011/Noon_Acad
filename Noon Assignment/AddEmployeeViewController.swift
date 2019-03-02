@@ -70,16 +70,17 @@ class AddEmployeeViewController: UIViewController {
                 self.bAnniversary.setTitle(self.getDateFormatter().string(from: annive), for: .normal);
             }
             self.switchMarried.isOn = emp.married;
+            self.stackAnniversary.isHidden = !self.switchMarried.isOn;
         }
 
         let tapRec = UITapGestureRecognizer(target: self, action: #selector(self.onTapView(_:)));
         self.view.addGestureRecognizer(tapRec)
     }
-	
-	@objc func onTapView(_ sender:Any){
-		        self.tName.endEditing(true);
-		        self.tEmail.endEditing(true);
-	}
+
+    @objc func onTapView(_ sender: Any) {
+        self.tName.endEditing(true);
+        self.tEmail.endEditing(true);
+    }
 
     func changeDatePickerVisibility(isHidden: Bool) {
         self.datePicker.isHidden = isHidden;
