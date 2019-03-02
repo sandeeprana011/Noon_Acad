@@ -33,6 +33,7 @@ class EmployeesListViewController: UIViewController {
         self.fetchEmployessListDateAndUPdateUI();
         self.tableView.delegate = self;
         self.tableView.dataSource = self;
+
     }
 
     private func fetchEmployessListDateAndUPdateUI() {
@@ -85,3 +86,4 @@ extension EmployeesListViewController: DelegateEmployeeUpdated {
         self.navigationController?.popViewController(animated: true);
     }
 }
+

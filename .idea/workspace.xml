@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="3efdf91d-5e74-42cf-bb14-843f8c212a98" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Noon Assignment/AddEmployeeViewController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Noon Assignment/AddEmployeeViewController.swift" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Noon Assignment/EmployeesListViewController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Noon Assignment/EmployeesListViewController.swift" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -14,11 +15,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="iphonesimulator_B03E8EE5-0309-4863-B544-39114D88DB26" />
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Noon Assignment/EmployeesListViewController.swift">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="177">
-              <caret line="42" column="44" lean-forward="true" selection-start-line="42" selection-start-column="44" selection-end-line="42" selection-end-column="44" />
+            <state relative-caret-position="154">
+              <caret line="35" selection-start-line="35" selection-end-line="35" />
               <folding>
                 <element signature="e#165#177#0" expanded="true" />
               </folding>
@@ -68,11 +69,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Noon Assignment/AddEmployeeViewController.swift">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2012">
-              <caret line="40" column="52" selection-start-line="40" selection-start-column="52" selection-end-line="40" selection-end-column="52" />
+            <state relative-caret-position="351">
+              <caret line="75" column="18" selection-start-line="75" selection-start-column="18" selection-end-line="75" selection-end-column="18" />
               <folding>
                 <element signature="e#163#175#0" expanded="true" />
               </folding>
@@ -109,6 +110,8 @@
       <find>newEmployee</find>
       <find>onCancel</find>
       <find>NsPred</find>
+      <find>viewdidlo</find>
+      <find>viewdid</find>
     </findStrings>
     <replaceStrings>
       <replace>&quot;</replace>
@@ -129,8 +132,8 @@
         <option value="$PROJECT_DIR$/Noon Assignment/Extensions.swift" />
         <option value="$PROJECT_DIR$/Noon Assignment/Employee.swift" />
         <option value="$PROJECT_DIR$/Noon Assignment/DelegateEmployeeUpdated.swift" />
-        <option value="$PROJECT_DIR$/Noon Assignment/AddEmployeeViewController.swift" />
         <option value="$PROJECT_DIR$/Noon Assignment/EmployeesListViewController.swift" />
+        <option value="$PROJECT_DIR$/Noon Assignment/AddEmployeeViewController.swift" />
       </list>
     </option>
   </component>
@@ -208,7 +211,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7508000" />
+    <option name="totallyTimeSpent" value="7780000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="806" extended-state="6" />
@@ -240,13 +243,7 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Noon Assignment/DatePickerViewController.swift">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="3" selection-start-line="12" selection-start-column="3" selection-end-line="12" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Noon Assignment/DatePickerViewController.swift" />
     <entry file="file://$PROJECT_DIR$/Noon Assignment/CellSelectCity.swift">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
@@ -309,22 +306,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Noon Assignment/AddEmployeeViewController.swift">
+    <entry file="file://$PROJECT_DIR$/Noon Assignment/EmployeesListViewController.swift">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2012">
-          <caret line="40" column="52" selection-start-line="40" selection-start-column="52" selection-end-line="40" selection-end-column="52" />
+        <state relative-caret-position="154">
+          <caret line="35" selection-start-line="35" selection-end-line="35" />
           <folding>
-            <element signature="e#163#175#0" expanded="true" />
+            <element signature="e#165#177#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Noon Assignment/EmployeesListViewController.swift">
+    <entry file="file://$PROJECT_DIR$/Noon Assignment/AddEmployeeViewController.swift">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="177">
-          <caret line="42" column="44" lean-forward="true" selection-start-line="42" selection-start-column="44" selection-end-line="42" selection-end-column="44" />
+        <state relative-caret-position="351">
+          <caret line="75" column="18" selection-start-line="75" selection-start-column="18" selection-end-line="75" selection-end-column="18" />
           <folding>
-            <element signature="e#165#177#0" expanded="true" />
+            <element signature="e#163#175#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -71,7 +71,15 @@ class AddEmployeeViewController: UIViewController {
             }
             self.switchMarried.isOn = emp.married;
         }
+
+        let tapRec = UITapGestureRecognizer(target: self, action: #selector(self.onTapView(_:)));
+        self.view.addGestureRecognizer(tapRec)
     }
+	
+	@objc func onTapView(_ sender:Any){
+		        self.tName.endEditing(true);
+		        self.tEmail.endEditing(true);
+	}
 
     func changeDatePickerVisibility(isHidden: Bool) {
         self.datePicker.isHidden = isHidden;
@@ -198,6 +206,4 @@ extension AddEmployeeViewController: DelegateCitySelected {
         // dismiss if presented
     }
 }
-
-
 
